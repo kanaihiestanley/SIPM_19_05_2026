@@ -162,7 +162,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from './Login_Context/AuthContext';
 
 const HeaderContent = () => {
-  const { user, logout, isAuthenticated, hasPermission } = useAuth();
+  const { user, logout, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -299,7 +299,7 @@ const HeaderContent = () => {
               <>
                 <hr className="my-3" />
                 <li className="nav-item">
-                  <div className="fw-bold text-danger mb-2">🔧 ADMIN PANEL</div>
+                  <div className="fw-bold text-danger mb-2"><span>🔧 ADMIN PANEL</span></div>
                 </li>
                 <li className="nav-item mb-2">
                   <Link className="nav-link btn btn-warning text-dark text-center" to="/register">

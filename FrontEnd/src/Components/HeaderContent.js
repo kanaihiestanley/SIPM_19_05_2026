@@ -299,7 +299,7 @@ const HeaderContent = () => {
               <>
                 <hr className="my-3" />
                 <li className="nav-item">
-                  <div className="fw-bold text-danger mb-2"><span>🔧 ADMIN PANEL</span></div>
+                  <div className="fw-bold text-danger mb-2">ADMIN PANEL</div>
                 </li>
                 <li className="nav-item mb-2">
                   <Link className="nav-link btn btn-warning text-dark text-center" to="/register">

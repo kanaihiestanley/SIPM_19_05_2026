@@ -15,7 +15,43 @@ code {
 }
 
 
+/* Prevent scroll freezing */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto !important;
+  height: auto !important;
+  min-height: 100vh;
+}
 
+/* Fix for offcanvas scroll issues */
+.offcanvas {
+  visibility: visible !important;
+}
+
+.offcanvas-body {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent body scroll lock when offcanvas is open */
+body.offcanvas-open {
+  overflow: auto !important;
+}
+
+/* Fix for fixed positioning issues */
+.position-fixed {
+  will-change: transform;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent content shift */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
 
 
 

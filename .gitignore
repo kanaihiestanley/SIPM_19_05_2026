@@ -1,35 +1,31 @@
-# # Node.js
-# node_modules/
-# .env
-# .DS_Store
-
-# # React
-# client/node_modules/
-# client/.env
-# client/build/
-
-# # MongoDB
-# *.log
-
-
-
-
-
-# Dependencies
+# Node modules
 node_modules/
-/.pnp
-.pnp.js
+frontend/node_modules/
+backend/node_modules/
 
-# Build output
+# Build folders
 build/
 dist/
-.next/
-.out/
+.frontend/build/
+.backend/dist/
 
-# Environment variables
+# Environment files
 .env
 .env.local
 .env.production
+
+# Uploaded files (IMPORTANT!)
+backEnd/uploads/
+uploads/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+
+# Database files
+*.sql
+*.db
 
 # IDE files
 .vscode/
@@ -47,9 +43,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Testing
-/coverage/
-
-# Misc
-*.pem
-*.cert
+# Package locks (optional - keep if you want)
+# package-lock.json
+# yarn.lock

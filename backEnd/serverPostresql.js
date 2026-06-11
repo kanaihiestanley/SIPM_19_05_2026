@@ -124,7 +124,8 @@ const allowedOrigins = [
   'https://sipminternation.vercel.app',   // Your Vercel frontend
   'https://sipm.org.ng',                  // Your custom domain (future)
   'http://localhost:3000',                // Local React development
-  'http://localhost:5005'                 // Local backend testing
+  'http://localhost:5005',                 // Local backend testing
+   /^https:\/\/sipm-19-05-2026-.*\.vercel\.app$/  // ✅ Regex for Vercel preview deployments
 ];
 
 app.use(cors({

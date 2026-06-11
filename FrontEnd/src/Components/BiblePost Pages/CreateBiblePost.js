@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import API_URL from '../../config';
 
 const CreateBiblePost = ({ onPostCreated }) => {
   const [formData, setFormData] = useState({
@@ -24,7 +25,7 @@ const CreateBiblePost = ({ onPostCreated }) => {
 
     try {
       // FIXED: Correct endpoint and method
-      const response = await axios.post('http://localhost:5005/api/biblePosts', formData);
+      const response = await axios.post(`${API_URL}/api/biblePosts`, formData);
       console.log('Post created:', response.data);
       
       // Reset form

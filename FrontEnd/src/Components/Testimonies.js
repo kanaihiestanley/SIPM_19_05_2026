@@ -8,7 +8,7 @@ import OtherFooterContent from "./OtherFooterContent";
 // import {useGalleryPostContext} from "./hooks/useGalleryPostContext";
 
 
-const DiscoverYou = () => {   
+const Testimonies = () => {   
 
     // const { GalleryPosts, dispatch } = useGalleryPostContext();
 
@@ -26,7 +26,7 @@ const DiscoverYou = () => {
     return(
         <div className="bg-info" style={{height: '800px'}}>
             <OtherHeaderContent />
-            <h1 className="text-outline-info display-1">Discover, You</h1> 
+            <h1 className="text-outline-info display-1">Testimonies</h1> 
             <div className="text-center">
                 
                 <div className="row">
@@ -118,4 +118,4 @@ const DiscoverYou = () => {
     
 }
 
-export default DiscoverYou
+export default Testimonies

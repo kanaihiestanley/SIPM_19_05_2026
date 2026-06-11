@@ -4,6 +4,8 @@ import axios from 'axios';
 import OtherHeaderContent from "../OtherHeaderContent";
 import CreateBiblePost from "./CreateBiblePost";
 import BibleDetails from "./BibleDetails";
+import API_URL from '../../config';
+
 
 const HomeBiblePost = () => {
   const [BiblePosts, setBiblePosts] = useState([]);
@@ -13,7 +15,7 @@ const HomeBiblePost = () => {
   // FIXED: Changed from PATCH to GET, fixed endpoint URL
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:5005/api/biblePosts');
+      const response = await axios.get(`${API_URL}/api/biblePosts`);
       console.log('Fetched data:', response.data); // Debug log
       setBiblePosts(response.data);
     } catch (error) {
@@ -33,7 +35,7 @@ const HomeBiblePost = () => {
       try {
         console.log('Deleting post with ID:', postId);
         // FIXED: Correct endpoint and port
-        await axios.delete(`http://localhost:5005/api/biblePosts/${postId}`);
+        await axios.delete(`${API_URL}/api/biblePosts/${postId}`);
         alert('Post deleted successfully!');
         fetchData(); // Refresh the list instead of reloading page
       } catch (error) {

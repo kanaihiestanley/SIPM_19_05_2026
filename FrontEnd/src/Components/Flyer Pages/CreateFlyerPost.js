@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Notification from '../Notification';
+import API_URL from '../../config';
+
 
 const CreateFlyerPost = ({ addFlyerPost }) => {
   const [newPost, setNewPost] = useState({ 
@@ -70,7 +72,7 @@ const CreateFlyerPost = ({ addFlyerPost }) => {
         formData.append('images', file);
       });
 
-      const response = await axios.post('http://localhost:5005/api/flyers', formData, {
+      const response = await axios.post(`${API_URL}/api/flyers`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

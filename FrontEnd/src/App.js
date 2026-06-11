@@ -5,7 +5,7 @@ import HomePage from './Components/HomePage';
 import HomeFlyer from './Components/Flyer Pages/HomeFlyer';
 import OurServices from './Components/OurServices';
 import FooterContent from './Components/FooterContent';
-import DiscoverYou from './Components/DiscoverYou';
+import Testimonies from './Components/Testimonies';
 import OurContact from './Components/OurContact';
 import AboutPastor from './Components/AboutPastor';
 import AboutSIPM from './Components/AboutSIPM';
@@ -28,7 +28,7 @@ function App() {
             {/* Public routes - everyone can access */}
             <Route path="/" element={<HomePage />} />
             <Route path="/ourservices" element={<OurServices />} />
-            <Route path="/discoveryou" element={<DiscoverYou />} />
+            <Route path="/testimonies" element={<Testimonies />} />
             <Route path="/ourcontact" element={<OurContact />} />
             <Route path="/aboutpastor" element={<AboutPastor />} />          
             <Route path="/aboutsipm" element={<AboutSIPM />} />   

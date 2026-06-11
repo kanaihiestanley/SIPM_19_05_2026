@@ -30,7 +30,7 @@ class OtherHeaderContent extends Component {
                                     <NavLink className="nav-link text-white fw-bold active" aria-current="page" to="/OurServices" style={{textShadow: '2px 2px 0 #000'}}>Program</NavLink>                                    
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link text-white fw-bold" to="/DiscoverYou" style={{textShadow: '2px 2px 0 #000'}}>Discover You</NavLink>
+                                    <NavLink className="nav-link text-white fw-bold" to="/Testimonies" style={{textShadow: '2px 2px 0 #000'}}>Testimonies</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link text-white fw-bold" to="/OurContact" style={{textShadow: '2px 2px 0 #000'}}>Contact</NavLink>

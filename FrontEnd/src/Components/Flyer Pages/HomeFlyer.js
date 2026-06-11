@@ -3,6 +3,7 @@ import axios from 'axios';
 import OtherHeaderContent from '../OtherHeaderContent';
 import FlyerDetails from './FlyerDetails';
 import CreateFlyerPost from './CreateFlyerPost';
+import API_URL from '../../config';
 
 const HomeFlyer = () => {
   const [flyerPosts, setFlyerPosts] = useState([]);
@@ -15,7 +16,7 @@ const HomeFlyer = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get('http://localhost:5005/api/flyers');
+      const response = await axios.get(`${API_URL}/api/flyers`);
       console.log('Fetched flyer posts:', response.data);
       
       const posts = response.data.map(post => ({
@@ -40,7 +41,7 @@ const HomeFlyer = () => {
     const isConfirmed = window.confirm('Are you sure you want to delete this flyer?');
     if (isConfirmed) {
       try {
-        await axios.delete(`http://localhost:5005/api/flyers/${postId}`);
+        await axios.delete(`${API_URL}/api/flyers/${postId}`);
         setFlyerPosts((prevPosts) => prevPosts.filter((post) => post.id !== postId));
       } catch (error) {
         console.error('Error deleting post:', error);

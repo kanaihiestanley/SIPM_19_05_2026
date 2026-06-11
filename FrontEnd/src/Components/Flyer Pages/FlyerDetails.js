@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import API_URL from '../../config';
 
 const FlyerDetails = ({ FlyerPost, onDelete, onUpdate }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -11,7 +12,7 @@ const FlyerDetails = ({ FlyerPost, onDelete, onUpdate }) => {
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete this flyer?')) {
       try {
-        await axios.delete(`http://localhost:5005/api/flyers/${FlyerPost.id}`);
+        await axios.delete(`${API_URL}/api/flyers/${FlyerPost.id}`);
         onDelete(FlyerPost.id);
       } catch (error) {
         console.error('Error deleting data:', error);
@@ -58,7 +59,7 @@ const FlyerDetails = ({ FlyerPost, onDelete, onUpdate }) => {
       });
 
       const response = await axios.put(
-        `http://localhost:5005/api/flyers/${FlyerPost.id}`, 
+        `${API_URL}/api/flyers/${FlyerPost.id}`, 
         formData,
         { headers: { 'Content-Type': 'multipart/form-data' } }
       );
@@ -113,7 +114,7 @@ const FlyerDetails = ({ FlyerPost, onDelete, onUpdate }) => {
               {editedPost.images && editedPost.images.map((imageUrl, index) => (
                 <div key={index} className="col-md-3 col-sm-4 col-6 mb-2 position-relative">
                   <img 
-                    src={`http://localhost:5005${imageUrl}`} 
+                    src={`${API_URL}${imageUrl}`} 
                     alt={`Flyer ${index + 1}`} 
                     className="img-fluid rounded"
                     style={{ height: '100px', objectFit: 'cover', width: '100%' }}
@@ -176,7 +177,7 @@ const FlyerDetails = ({ FlyerPost, onDelete, onUpdate }) => {
                 {flyerImages.map((imageUrl, index) => (
                   <div key={index} className="col-md-3 col-sm-4 col-6 mb-2">
                     <img 
-                      src={`http://localhost:5005${imageUrl}`} 
+                      src={`${API_URL}${imageUrl}`} 
                       alt={`Flyer ${index + 1}`} 
                       style={{ maxWidth: '100%', height: '150px', objectFit: 'cover', borderRadius: '5px' }}
                       className="img-fluid"

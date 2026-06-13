@@ -114,7 +114,7 @@ const FlyerDetails = ({ FlyerPost, onDelete, onUpdate }) => {
               {editedPost.images && editedPost.images.map((imageUrl, index) => (
                 <div key={index} className="col-md-3 col-sm-4 col-6 mb-2 position-relative">
                   <img 
-                    src={`${API_URL}${imageUrl}`} 
+                    src={imageUrl.startsWith('http') ? imageUrl : `${API_URL}${imageUrl}`}
                     alt={`Flyer ${index + 1}`} 
                     className="img-fluid rounded"
                     style={{ height: '100px', objectFit: 'cover', width: '100%' }}
@@ -177,7 +177,7 @@ const FlyerDetails = ({ FlyerPost, onDelete, onUpdate }) => {
                 {flyerImages.map((imageUrl, index) => (
                   <div key={index} className="col-md-3 col-sm-4 col-6 mb-2">
                     <img 
-                      src={`${API_URL}${imageUrl}`} 
+                      src={imageUrl.startsWith('http') ? imageUrl : `${API_URL}${imageUrl}`}
                       alt={`Flyer ${index + 1}`} 
                       style={{ maxWidth: '100%', height: '150px', objectFit: 'cover', borderRadius: '5px' }}
                       className="img-fluid"
